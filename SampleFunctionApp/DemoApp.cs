@@ -41,7 +41,7 @@ namespace SampleFunctionApp
             using(var client = new HttpClient())
             {
                 var requestData = new StringContent("{'text':'" + message + "'}", Encoding.UTF8, "application/json");
-                var response = await client.PostAsync($"https://hooks.slack.com/services/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", requestData);
+                var response = await client.PostAsync("Slack webhook url", requestData);
                 var result = await response.Content.ReadAsStringAsync();
 
                 return result;
